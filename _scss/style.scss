@@ -1,0 +1,198 @@
+@import 'mixins';
+@import 'reset';
+
+body {
+  font-size: 62.5%;
+  font-family: 'Lucida Console', Monaco, monospace
+}
+
+main {
+
+  width: 960px;
+  font-size: 1.8em;
+}
+
+h1 {
+  font-size: 1.3em;
+}
+
+.demo-container{
+  display: none;
+}
+
+.hide{
+  display: none;
+}
+
+.centered {
+  width: 100%;
+  height: 100%;
+  background-color:rgba(0,0,0,0.7);
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
+
+.utilContainer{
+  height: 300px;
+  display: block;
+
+  margin-top: auto;
+  margin-bottom: auto;
+
+}
+
+.oneOne{
+  width: 90%;
+  float:left;
+}
+
+.twoTwo{
+  width: 50%;
+  float:left;
+}
+
+.fourFourth{
+  width: 25%;
+  float:left;
+}
+
+.eightEight{
+  width: 12.5%;
+  float:left;
+}
+
+.track{
+  line-height: 30px;
+  height: 30px;
+  width: 100%;
+  font-size: 0.5em;
+}
+
+.trackContainer{
+  margin-bottom: 15px;
+  background-color:rgba(33,22,44,0.9);
+
+  color: #FFF;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+}
+
+.trackUtilities{
+  background-color: #FFF;
+  color: #332244;
+  padding-left: 10px;
+}
+
+.nr{
+  line-height: 30px;
+  height: 30px;
+  display: inline-block;
+}
+
+button{
+  line-height: 25px;
+  height: 25px;
+  display: inline-block;
+  cursor: pointer;
+
+  font-family: 'Lucida Console', Monaco, monospace;
+  font-size: 0.6em;
+  border-radius:6px;
+  background: rgb(202, 60, 60);
+  color: #FFF;
+  border:#100;
+}
+
+.trackManager{
+
+}
+
+h2{
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.addTrackContainer{
+  padding-left: 10px;
+  background-color: #FFF;
+  margin-bottom: 15px;
+}
+
+ul{
+  margin:0;
+  padding:0;
+  line-height:30px;
+}
+
+ul li{
+
+  padding-top:auto;
+  padding-bottom:auto;
+  display: inline-block;
+
+  margin-left: 5px;
+}
+
+.total, .left{
+  color: #ff1f6e;
+  font-size: 1em;
+}
+
+.addTrack, h2,{
+  text-decoration: none;
+  color: #ff005a;
+  font-size: 2em;
+}
+
+.incomplete{
+  color: #ff1f6e;
+  font-size: 0.7em;
+}
+
+.completed{
+  color: #2aff1f;
+}
+
+.scales{
+  padding:0;
+
+}
+
+.bindKey{
+  display: block;
+  width: 100px;
+  height: 100px;
+  color: #FFF;
+  font-size: 100px;
+  @include center;
+}
+
+.available_sounds{
+  cursor: pointer;
+
+  display: block;
+  width: 25%;
+  height: 100px;
+
+  font-size: 100px;
+  @include center;
+}
+
+.back{
+
+  display: block;
+  width: 25%;
+  height: 100px;
+  color: #FFF;
+  text-decoration: none;
+  font-size: 50px;
+  padding-top: 20px;
+
+  @include center;
+}

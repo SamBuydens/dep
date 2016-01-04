@@ -1,0 +1,20 @@
+<div class='trackContainer' data-trackid='{{trackNumber}}'>
+  <div class='trackUtilities'>
+    <div class='nr'>Track: #{{trackNumber}}</div>
+    <button type="button" class='delete' onmousedown='deleteMe(event)'>delete</button>
+    <span class='incomplete'>unpublished</span>
+  </div>
+  <div class='track'>
+    {{#each sounds}}
+    <div class={{soundLength}}>
+        <span>{{title}}</span>
+        <select class='trackManager_selectSound' onChange='trackManagerSoundChanged(event)' data-sound-position='{{@index}}'>
+          <option value="select_sound">select sound</option>
+          {{#each filteredSounds}}
+          <option value="{{title}}">{{title}}</option>
+          {{/each}}
+        </select>
+        </div>
+    {{/each}}
+  </div>
+</div>

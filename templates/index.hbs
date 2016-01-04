@@ -1,0 +1,65 @@
+<div class="user-manager">
+  <h1>
+    Welkom {{name}}
+  </h1>
+  <a href="/logout">logout</a>
+</div>
+
+{{#if isUser}}
+  <div class='container'>
+    {{> trackManager this}}
+    {{> utils this}}
+  </div>
+{{/if}}
+
+{{#if userPage}}
+<div class="song-manager">
+  {{userPage}}'s liedjes
+    <select id='song-list'>
+      {{#if isUser}}
+        <option value="new-song">nieuw lied</option>
+      {{/if}}
+      {{#each songs}}
+      <option value="{{title}}">{{title}}</option>
+      {{/each}}
+    </select>
+    {{#if isUser}}
+      <button type="button" id='remove-song'>verwijder</button>
+    {{/if}}
+  {{/if}}
+</div>
+
+
+{{#section 'head'}}
+
+{{/section}}
+
+{{#section 'scripts'}}
+<script src="/js/vendor/socket.io/socket.io.js"></script>
+  <script src="/js/vendor/trackingJS/tracking-min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/three.js/r73/three.min.js"></script>
+
+  <script src="/js/vendor/three/GPUParticleSystem.js"></script>
+  <script src="/js/vendor/three/shaders/CopyShader.js"></script>
+  <script src="/js/vendor/three/shaders/DotScreenShader.js"></script>
+  <script src="/js/vendor/three/shaders/RGBShiftShader.js"></script>
+  <script src="/js/vendor/three/shaders/DigitalGlitch.js"></script>
+  <script src="/js/vendor/three/shaders/FilmShader.js"></script>
+
+  <script src="/js/vendor/three/postprocessing/EffectComposer.js"></script>
+  <script src="/js/vendor/three/postprocessing/RenderPass.js"></script>
+  <script src="/js/vendor/three/postprocessing/MaskPass.js"></script>
+  <script src="/js/vendor/three/postprocessing/ShaderPass.js"></script>
+  <script src="/js/vendor/three/postprocessing/StereoEffect.js"></script>
+
+  <script src="/js/vendor/three/postprocessing/GlitchPass.js"></script>
+  <script src="/js/vendor/three/postprocessing/FilmPass.js"></script>
+
+  <script src="/js/vendor/three/controls/DeviceOrientationControls.js"></script>
+  <script src="/js/vendor/gyro/gyro.min.js"></script>
+
+  <script type="x-shader/x-vertex" id="vertexShader" src="/js/vertexShader.js"></script>
+  <script type="x-shader/x-vertex" id="fragmentShader" src="/js/fragmentShader.js"></script>
+
+  <script src="/js/script.js"></script>
+{{/section}}

@@ -1,0 +1,25 @@
+{{#if error}}
+  <p class="bg-danger">{{error}}</p>
+{{/if}}
+
+<form class="form" method="post" action="/login">
+  <h1>Aanmelden</h1>
+  <div class="form-group {{#if errors.login}} has-error {{/if}}">
+    <label class="control-label" for="login">Login</label>
+    <input type="text" name="login" class="form-control" value="{{values.login}}"/>
+  </div>
+
+  <div class="form-group {{#if errors.password}} has-error {{/if}}">
+    <label class="control-label" for="password">Password</label>
+    <input type="password" name="password" class="form-control" />
+  </div>
+
+  <input class="btn btn-lg btn-primary" type="submit" text="Login" />
+
+</form>
+
+<a href="/register">registreren</a>
+
+<p>
+  Gebruik spatie om de controls te openen, shift + a,z,e,r,t,y,u,i,o,p om een toets te koppelen aan een geluid
+</p>
